@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Math AI — Step-by-Step Tutor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="header-brand">
+        <span class="logo">∑</span>
+        <div class="brand-text">
+          <h1>Math AI</h1>
+          <p class="header-sub" id="status">Loading knowledge base...</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <span class="level-badge" id="levelBadge" hidden>Level: —</span>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="chat" id="chat">
+      <div class="welcome">
+        <div class="welcome-icon">∑</div>
+        <h2>Hi, I'm your Math AI tutor.</h2>
+        <p>Type a question and I'll solve it step by step, explain the method, and point you to the right topics.</p>
+        <div class="welcome-examples">
+          <strong>Try asking:</strong>
+          <span class="example-chip">Solve x² + 5x + 6 = 0</span>
+          <span class="example-chip">Expand (x + 3)(x − 2)</span>
+          <span class="example-chip">Factorise x² − 9</span>
+          <span class="example-chip">Differentiate x^3 sin x</span>
+          <span class="example-chip">Integrate 2x + 1</span>
+          <span class="example-chip">det [[1,2],[3,4]]</span>
+          <span class="example-chip">Dot product (1,2,3) · (4,5,6)</span>
+          <span class="example-chip">15% of 80</span>
+          <span class="example-chip">Solve 2x + 3y = 12 and x − y = 1</span>
+        </div>
+      </div>
+    </main>
+
+    <footer class="input-area">
+      <div class="input-wrapper">
+        <input
+          type="text"
+          id="input"
+          placeholder="Type a maths question…"
+          autocomplete="off"
+          autofocus
+        />
+        <button id="send" aria-label="Send question">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5"></path>
+            <path d="m5 12 7-7 7 7"></path>
+          </svg>
+        </button>
+      </div>
+      <p class="disclaimer" id="source">Solutions computed locally; explanations from Math_AI.md.</p>
+    </footer>
+  </div>
+
+  <script src="engine.js"></script>
+  <script src="solvers.js"></script>
+  <script src="kb.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
